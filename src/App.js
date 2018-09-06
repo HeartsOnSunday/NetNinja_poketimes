@@ -21,5 +21,3 @@ class App extends Component {
 }
 
 export default App;
-
-//WHAT THE FUCK IS GOING ON WITH GIT GODDAMN IT
