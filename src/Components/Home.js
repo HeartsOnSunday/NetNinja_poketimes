@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Poke from "../Poke.jpeg";
 //convert from functional to class-based component
 class Home extends Component {
   state = {
@@ -20,9 +21,10 @@ class Home extends Component {
       posts.map(post => {
         return (
           <div className="post card" key={post.id}>
+            <img src={Poke} alt="Not a pokemon" />
             <div className="card-content">
               <Link to={"/" + post.id}>
-                <span className="card-title">{post.title}</span>
+                <span className="card-title yellow-text">{post.title}</span>
               </Link>
               <p>{post.body}</p>
             </div>
