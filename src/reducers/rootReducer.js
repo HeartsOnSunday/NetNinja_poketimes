@@ -1,15 +1,22 @@
 const initState = {
-  post: [
-    { id: "1", title: "Dummy Data", body: "Loren ipsum..." },
-    { id: "2", title: "More Dummy Data", body: "Doren ipsum..." },
-    { id: "3", title: "So Much Dummy Data", body: "Foren ipsum..." }
+  posts: [
+    { id: "1", title: "Squirtle", body: "Dummy Data" },
+    { id: "2", title: "Charmander", body: "More Dummy Data" },
+    { id: "3", title: "Pikachu", body: "Just cant get enough Dummy Data" }
   ]
 };
 
 const rootReducer = (state = initState, action) => {
+  if (action.type === "DELETE_POST") {
+    let newPosts = state.posts.filter(post => {
+      return post.id !== action.id;
+    });
+    return {
+      ...state,
+      posts: newPosts
+    };
+  }
   return state;
 };
-
-console.log(initState);
 
 export default rootReducer;
